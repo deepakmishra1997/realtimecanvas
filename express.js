@@ -56,7 +56,8 @@ io.on("connection", function (socket) {
         socket.broadcast.emit("down");
     })
 })
+const port = process.env.PORT || 3000;
 app.use(express.static("client"));
-server.listen(3000, function () {
-    console.log("server is listening at 3000");
+server.listen(port, function () {
+    console.log("server is listening at port:" + port);
 })
